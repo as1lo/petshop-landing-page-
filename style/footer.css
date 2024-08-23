@@ -1,0 +1,19 @@
+footer{
+    background-color: #062D3E;
+    bottom: 0;
+    color: #ED5C01;
+    position: absolute;
+    width: 100%;
+   
+}
+
+footer ul li{
+    list-style-type: none;
+    display: inline;
+}
+
+footer ul li a{
+    color: white;
+    text-decoration: none;
+    
+}
