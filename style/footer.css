@@ -4,16 +4,22 @@ footer{
     color: #ED5C01;
     position: absolute;
     width: 100%;
-   
+    display: flex;
+    padding: 30px;
 }
 
 footer ul li{
     list-style-type: none;
     display: inline;
+    margin-right: 10px;
 }
 
 footer ul li a{
     color: white;
     text-decoration: none;
     
+}
+
+#titulo-footer{
+    font-size: 70px;
 }
