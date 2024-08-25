@@ -32,33 +32,3 @@ header nav ul li a{
    
 }
 
-
-@media (max-width: 600px) {
-    /* Altera a disposição do nav para dispositivos móveis */
-    header nav ul {
-        flex-direction: column;
-        display: none; /* Esconde a lista de navegação por padrão */
-        width: 100%;
-    }
-
-    header nav ul li {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-
-    header nav ul li a {
-        padding: 10px;
-        display: block;
-        text-align: center;
-    }
-
-    /* Exibe o ícone do menu (hamburger) */
-    .menu-icon {
-        display: block;
-    }
-}
-
-/* Estilos para mostrar/esconder o menu */
-.nav-active {
-    display: flex;
-}
