@@ -1,0 +1,64 @@
+header{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 0.6%;
+    padding-bottom: 0.6%;
+    color: #062D3E;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+header nav ul{
+    flex-wrap: nowrap;
+}
+
+header nav ul li{
+    list-style-type: none;
+    display: inline;
+    align-items: center;
+    margin-right: 3%;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: #062D3E;
+   
+}
+
+
+@media (max-width: 600px) {
+    /* Altera a disposição do nav para dispositivos móveis */
+    header nav ul {
+        flex-direction: column;
+        display: none; /* Esconde a lista de navegação por padrão */
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    header nav ul li a {
+        padding: 10px;
+        display: block;
+        text-align: center;
+    }
+
+    /* Exibe o ícone do menu (hamburger) */
+    .menu-icon {
+        display: block;
+    }
+}
+
+/* Estilos para mostrar/esconder o menu */
+.nav-active {
+    display: flex;
+}

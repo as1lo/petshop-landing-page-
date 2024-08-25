@@ -1,0 +1,24 @@
+#sobre{
+    padding-left: 10%;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    color: white;
+    background-color: #ED5C01;
+}
+
+#sobre img{
+    margin: 50px;
+    margin-left: 0;
+}
+
+#sobre div{
+    margin-right: 10%;
+    font-weight: bold;
+}
+
+#sobre hr{
+    border: none;
+    background-color: #189CAB;
+    height: 4px;
+}

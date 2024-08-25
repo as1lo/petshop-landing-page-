@@ -1,0 +1,17 @@
+#principal{
+    padding-left: 10%;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+#titulo-principal{
+    font-size: 430%;
+    color: #062D3E;
+    margin-right: 5%;
+}
+
+#span-titulo-principal{
+    color: #ED5C01;
+}
