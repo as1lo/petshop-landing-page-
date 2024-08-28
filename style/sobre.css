@@ -1,5 +1,6 @@
 #sobre{
     padding-left: 10%;
+    padding-right: 10%;
     display: flex;
     box-sizing: border-box;
     align-items: center;
@@ -13,7 +14,6 @@
 }
 
 #sobre div{
-    margin-right: 10%;
     font-weight: bold;
 }
 
