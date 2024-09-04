@@ -10,6 +10,7 @@ main{
     background-color: white;
     border-radius: 20px;
     box-shadow: 1px 1px 5px;
+    width: 20%;
     justify-content: space-around;
 }
 
@@ -110,3 +111,5 @@ main input:focus{
     opacity: 1;
     right: 0;
   }
+
+  

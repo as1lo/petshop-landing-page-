@@ -8,6 +8,7 @@
     background-color: #FBBD08;
     padding-left: 10%;
     padding-right: 10%;
+   
 }
 
 #contato-form {
@@ -76,4 +77,25 @@ button:hover {
 
 button:active {
     transform: scale(0.95);
+}
+
+@media only screen and (max-width: 768px){
+    #contato {
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    #dog-form{
+        width: 200%;
+    }
+
+        
+    #contato-imagem {
+        background-color: #FBBD08;
+        padding-left: 10%;
+        padding-right: 10%;
+        width: 50vw;
+    }
 }

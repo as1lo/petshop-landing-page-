@@ -22,3 +22,10 @@
     background-color: #189CAB;
     height: 4px;
 }
+
+
+@media only screen and (max-width: 768px){
+    #sobre img{
+        display: none;
+    }
+}

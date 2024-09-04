@@ -30,4 +30,36 @@ footer ul li a{
 
 }
 
+@media only screen and (max-width: 768px){
+    footer{
+        background-color: #062D3E;
+        bottom: 0;
+        color: #ED5C01;
+        width: 100%;
+        
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 5%;
+        padding-bottom: 3%;
+        display: block;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
+    #img-footer{
+        display: none;
+    }
+
+    footer ul li{
+        list-style-type: none;
+        display: inline;
+        
+    }
+
+    #titulo-footer{
+        font-size: 70px;
+    
+    }
+}
