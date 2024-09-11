@@ -1,115 +1,116 @@
-main{
-    padding-right: 10%;
-    padding-left: 10%;
-    justify-content: space-around;
+main {
+  padding-right: 10%;
+  padding-left: 10%;
+  justify-content: space-around;
+  display: flex;
 }
 
+main input {
+  border: 2px solid rgb(175, 174, 174);
+  border-radius: 5px;
+  height: 35px;
+  color: black;
+  font-size: 20px;
 
-#grid-pagamento{
-    padding: 10px;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 1px 1px 5px;
-    width: 20%;
-    justify-content: space-around;
 }
 
+main input:focus {
 
-
-main input{
-    border: none;
-    border-radius: 5px;
-    height: 35px;
-    color: black;
-    font-size: 20px;
 }
 
-main input:focus{
-    
+#inicio-grid-lista-produtos{
+  display: flex;
+  list-style-type: none;
+  padding-right: 5%;
+}
+#inicio-grid-lista-produtos li{
+  padding-right: 5%;
+}
+#lista-produtos {
+  border: 2px solid #062d3e;
+  border-radius: 3px;
 }
 
-
-
-
-
-
-#btn-fechar{
-    background-color: #189CAB;
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 3px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition:  transform 0.4s ease;
+#grid-pagamento {
+  padding: 10px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px;
+  width: 80%;
+  justify-content: space-around;
+  display: flex;
 }
 
+#btn-fechar {
+  background-color: #189cab;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
 
 #btn-fechar:hover {
-    color: white;
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); 
-    transition: transform 0.4s ease;
-    transform: scale(1.1); 
+  color: white;
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease;
+  transform: scale(1.1);
 }
-
 
 #btn-fechar:active {
-    transform: scale(0.98); 
+  transform: scale(0.98);
 }
 
-
-#btn-add{
-    background-color: transparent;
-    padding: 8px;
-    border-radius: 3px;
-    color: #062D3E;
-    cursor: pointer;
-    border: 2px solid #062D3E;
-    font-weight: bold;
-    
+#btn-add {
+  background-color: transparent;
+  padding: 8px;
+  border-radius: 3px;
+  color: #062d3e;
+  cursor: pointer;
+  border: 2px solid #062d3e;
+  font-weight: bold;
 }
-
 
 .button {
-    display: inline-block;
-    border-radius: 4px;
-    background-color: #ED5C01;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 16px;
-    padding: 10px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-    width: 120px;
-    font-weight: bold;
-  }
-  
-  .button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-  }
-  
-  .button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
-  
-  .button:hover span {
-    padding-right: 25px;
-  }
-  
-  .button:hover span:after {
-    opacity: 1;
-    right: 0;
-  }
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #ed5c01;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  width: 120px;
+  font-weight: bold;
+}
 
-  
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
