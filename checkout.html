@@ -1,144 +1,153 @@
 <!DOCTYPE html>
 <html lang="pt">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="checkout-style/main.css">
-    <link rel="stylesheet" href="style/body.css">
-    <link rel="stylesheet" href="style/footer.css">
-    <link rel="stylesheet" href="style/header.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="checkout-style/main.css" />
+    <link rel="stylesheet" href="style/body.css" />
+    <link rel="stylesheet" href="style/footer.css" />
+    <link rel="stylesheet" href="style/header.css" />
 
     <title>Pet-Stop</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav>
-            <h1>Pet-Stop</h1>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <h1>Pet-Stop</h1>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section id="lista-produtos">
-            
-            <div id="inicio-grid-lista-produtos">
-                <p>
-                    Produto
-                </p>
-                <p>
-                    Preço
-                </p>
-                <p>
-                    Quantidade
-                </p>
+      <section id="lista-produtos">
+        <div id="inicio-grid-lista-produtos">
+          <p>Produto</p>
+          <p>Preço</p>
+          <p>Quantidade</p>
+        </div>
+
+        <hr />
+
+        <div class="item-produto">
+            <div class="produto">
+                <img src="assets/bebedouro-reptil.png" height="50" alt="" />
+                <p>Bebedouro Répteis</p>
             </div>
-        
-          
+
+            <p>R$ 51.80</p>
+
+            <div class="cont-quantidade">
+                <button>+1</button>
+                <p>1</p>
+                <button>+1</button>
+            </div>
+
+            <i class="fa-solid fa-trash"></i>
+        </div>
+
+        <div classe="item-produto"></div>
+
+        <div classe="item-produto"></div>
+      </section>
+
+      <section id="area-pedido">
+        <section id="resumo-pedido">
+          <h2>Resumo do pedido</h2>
+
+          <p>
+            
+          </p>
+
+          <p>
+
+          </p>
             <hr>
+          <p>
+            Total: 51.80
+          </p>
+          <div classe="subtotal-entrega-total"></div>
 
-            <div classe="subtotal-entrega-total">
+          <div classe="subtotal-entrega-total"></div>
 
-            </div>
-            
-            <div classe="subtotal-entrega-total">
-
-            </div>
-
-            <div  classe="subtotal-entrega-total">
-                
-            </div>
+          <div classe="subtotal-entrega-total"></div>
         </section>
 
-        <section id="area-pedido">
-            <section id="resumo-pedido">
-                <h2>Resumo do pedido</h2>
-                <div classe="subtotal-entrega-total">
-    
-                </div>
-                
-                <div classe="subtotal-entrega-total">
-    
-                </div>
-    
-                <div  classe="subtotal-entrega-total">
-                    
-                </div>
-            </section>
+        <div id="btn-pedidos">
+          <button id="btn-add">Adicionar mais produtos</button>
+          <button id="btn-fechar">Fechar pedido</button>
+        </div>
 
-            <div id="btn-pedidos">
-                <button id="btn-add">Adicionar mais produtos</button>
-                <button id="btn-fechar">
-                    Fechar pedido
-                </button>
-            </div>
+        <div id="forma-pagamento">
+          <h3>Formas de Pagamento</h3>
+          <div id="grid-pagamento">
+            <img src="assets/mastercard-logo.png" height="25" alt="" />
+            <img src="assets/hipercard-logo.png" height="30" alt="" />
+            <img src="assets/elo_logo.png" height="30" alt="" />
+          </div>
+        </div>
 
-            <div id="forma-pagamento">
-                <h3>Formas de Pagamento</h3>
-                <div id="grid-pagamento">
-                    <img src="assets/mastercard-logo.png" height="25" alt="">
-                    <img src="assets/hipercard-logo.png" height="30" alt="">
-                    <img src="assets/elo_logo.png" height="30" alt="">
-                </div>
-            </div>
-            
-            <div id="cep">
-                <h3>Calcular frete
-                </h3>
-                <div id="line-cep">
-                    <form action="">
-                        <input type="text">
-                        <button class="button">
-                            <span>Calcular</span>
-                        </button>
-                    </form>
-                </div>
-            </div>
+        <div id="cep">
+          <h3>Calcular frete</h3>
+          <div id="line-cep">
+            <form action="">
+              <input type="text" />
+              <button class="button">
+                <span>Calcular</span>
+              </button>
+            </form>
+          </div>
+        </div>
 
-            <div id="cupom">
-                <h3>Insira seu cupom</h3>
-                <div id="line-cupom">
-                    <form action="">
-                        <input type="text">
-                        <button class="button">
-                            <span>Enviar</span>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
+        <div id="cupom">
+          <h3>Insira seu cupom</h3>
+          <div id="line-cupom">
+            <form action="">
+              <input type="text" />
+              <button class="button">
+                <span>Enviar</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div id="titulo-footer">
-            Pet-Stop
+      <div id="titulo-footer">Pet-Stop</div>
+      <img src="assets/footer-img.png" height="150" alt="" />
+      <div id="div-listas-footer">
+        <div>
+          <ul>
+            <li><a href="">Sobre</a></li>
+            <li><a href="">Políticas de privacidade</a></li>
+            <li><a href="">Clientes</a></li>
+            <li><a href="">Notícias</a></li>
+          </ul>
         </div>
-        <img src="assets/footer-img.png" height="150" alt="">
-        <div id="div-listas-footer">
-            <div>
-                <ul>
-                    <li><a href="">Sobre</a></li>
-                    <li><a href="">Políticas de privacidade</a></li>
-                    <li><a href="">Clientes</a></li>
-                    <li><a href="">Notícias</a></li>
-                </ul>
-            </div>
-            <div>
-                <ul>
-                    <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-                </ul>
-            </div>
+        <div>
+          <ul>
+            <li>
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa-brands fa-twitter"></i></a>
+            </li>
+          </ul>
         </div>
+      </div>
     </footer>
-</body>
-
+  </body>
 </html>

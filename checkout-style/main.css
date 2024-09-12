@@ -21,14 +21,35 @@ main input:focus {
 #inicio-grid-lista-produtos{
   display: flex;
   list-style-type: none;
-  padding-right: 5%;
+  justify-content: space-around;
+  padding: 1em;
 }
-#inicio-grid-lista-produtos li{
-  padding-right: 5%;
+
+#resumo-pedido{
+  border: 2px solid #EBE3CC;
+  border-radius: 3px;
+  background-color: #EBE3CC;
+  margin-bottom: 1em;
 }
+
+.item-produto{
+  display: flex;
+  justify-content: space-around;
+}
+
+.produto{
+  display: flex;
+}
+
+.cont-quantidade{
+  display: flex;
+}
+
 #lista-produtos {
   border: 2px solid #062d3e;
   border-radius: 3px;
+  width: 50em;
+  margin-right: 1em;
 }
 
 #grid-pagamento {
