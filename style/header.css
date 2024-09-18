@@ -15,14 +15,15 @@ header nav{
 }
 
 header nav ul{
+    display: inline-flex;
     flex-wrap: nowrap;
 }
 
 header nav ul li{
     list-style-type: none;
-    display: inline;
+   
     align-items: center;
-    margin-right: 3%;
+    margin-right: 2vw;
 }
 
 header nav ul li a{
