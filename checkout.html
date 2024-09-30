@@ -13,9 +13,72 @@
     <link rel="stylesheet" href="style/header.css" />
 
     <title>Pet-Stop</title>
+    <script>
+      function getProduto(){
+        const SelecionarProdutos = localStorage.getItem('produto');
+
+        const produtoimagem = {
+          'racaocachorro': 'assets/racao-cachorro.png',
+          'sachegato': "assets/sache-gato.png",
+          'racaofurao': "assets/racao-furao.png",
+          'locomochila': "assets/locomochila.png",
+          'gaiola': "assets/gaiola-aves.png",
+          'bebedouro': "assets/bebedouro-reptil.png",
+        };
+
+        const produtovalor = {
+          'racaocachorro': 'R$ 39.99',
+          'sachegato': "R$ 9.99",
+          'racaofurao': "R$ 24.99",
+          'locomochila': "R$ 34.99",
+          'gaiola': "R$ 51.80",
+          'bebedouro': "R$ 78.90",
+        };
+
+        const produtonome = {
+          'racaocachorro': 'Ração Cachorro',
+          'sachegato': "Sachê Gato",
+          'racaofurao': "Ração Furão",
+          'locomochila': "Locomochila",
+          'gaiola': "Gaiola de Aves",
+          'bebedouro': "Bebedouro Réptil",
+        };
+
+        document.getElementById('produtoimagem').src = produtoimagem[SelecionarProdutos];
+        
+        document.getElementById('total').textContent = "Total: " + produtovalor[SelecionarProdutos];
+        
+        document.getElementById('valor').textContent = produtovalor[SelecionarProdutos];
+
+        document.getElementById('item-produto-dynamic').textContent = produtonome[SelecionarProdutos];
+      }
+      
+        
+
+      function goback() {
+        window.location.href = "index.html";
+      }
+
+      function somarQuant(btn){
+        if(btn == 1){
+          var contText = document.getElementById('quant').textContent
+          var cont = parseInt(contText)
+          cont++
+          document.getElementById('quant').textContent = cont
+        }else{
+          var contText = document.getElementById('quant').textContent
+          var cont = parseInt(contText)
+          if(cont > 1){
+            cont--
+          }
+          
+          document.getElementById('quant').textContent = cont
+        }
+      }
+    </script>
   </head>
 
-  <body>
+  <body onload="getProduto()">
     <header>
       <nav>
         <h1>Pet-Stop</h1>
@@ -30,51 +93,56 @@
 
     <main>
       <section id="lista-produtos">
-        <div id="inicio-grid-lista-produtos">
-          <p>Produto</p>
-          <p>Preço</p>
-          <p>Quantidade</p>
-        </div>
-
-        <hr/>
-
-        <div class="item-produto">
-            <div class="produto">
-                <img src="assets/bebedouro-reptil.png" height="50" alt="" />
-                <p>Bebedouro Répteis</p>
-            </div>
-
-            <p>R$ 51.80</p>
-
-            <div class="cont-quantidade">
-                <button>+1</button>
-                <p>1</p>
-                <button>+1</button>
-            </div>
-
-            <i class="fa-solid fa-trash"></i>
-        </div>
-
-        <div classe="item-produto"></div>
-
-        <div classe="item-produto"></div>
+        
+        <table>
+          <tr>
+            <th>
+              Produto
+            </th>
+            <th>
+              Valor
+            </th>
+            <th>
+              Quantidade
+            </th>
+            <th>
+              Deletar
+            </th>
+          </tr>
+          <tr>
+            <td class="produto">
+              <img id="produtoimagem" src="" height="50" alt="" />
+              <p id="item-produto-dynamic"></p>
+            </td>
+            <td>
+              <p id="valor"></p>
+            </td>
+            <td>
+              <div class="cont-quantidade">
+                <button onclick="somarQuant(0)">-1</button>
+                <p id="quant">1</p>
+                <button onclick="somarQuant(1)">+1</button>
+              </div>
+            </td>
+            <td>
+              <i class="fa-solid fa-trash"></i>
+        
+            </td>
+          </tr>
+        </table>
+      
+        <div class="item-produto"></div>
       </section>
 
       <section id="area-pedido">
         <section id="resumo-pedido">
           <h2>Resumo do pedido</h2>
 
-          <p>
-            
-          </p>
+          <p></p>
 
-          <p>
-
-          </p>
-            <hr>
-          <p>
-            Total: 51.80
-          </p>
+          <p></p>
+          <hr />
+          <p id="total"></p>
           <div classe="subtotal-entrega-total"></div>
 
           <div classe="subtotal-entrega-total"></div>

@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="style/produtos.css">
     <link rel="stylesheet" href="style/contato.css">
     <title>Pet-Stop</title>
+    <script>
+        function SelecionarProdutos(produto){
+            localStorage.setItem('produto', produto);
+            window.location.href = 'checkout.html'
+        }
+    </script>
 </head>
 
 <body>
@@ -155,36 +161,36 @@
 
                         <hr>
                         <h4>Ração Cachorro</h4>
-                        <img src="assets/racao-cachorro.png" height="200" alt="">
+                        <img src="assets/racao-cachorro.png" height="200" alt="racaocachorro">
 
                         <p>
                             R$ 39.99
                         </p>
 
-                        <button>Adicionar ao Carrinho</button>
+                        <button onclick="SelecionarProdutos('racaocachorro')" >Adicionar ao Carrinho</button>
                     </div>
                     <div class="produtos-card">
                         <i class="fa-solid fa-cat"></i>
 
                         <hr>
                         <h4>Sachê Gato</h4>
-                        <img src="assets/sache-gato.png" height="200" alt="">
+                        <img src="assets/sache-gato.png" height="200" alt="sachegato">
 
                         <p>
                             R$ 9.99
                         </p>
-                        <button>Adicionar ao Carrinho</button>
+                        <button onclick="SelecionarProdutos('sachegato')">Adicionar ao Carrinho</button>
                     </div>
                     <div class="produtos-card">
                         <i class="fa-solid fa-bone"></i>
                         <hr>
                         <h4>Ração Furão</h4>
-                        <img src="assets/racao-furao.png" height="200" alt="">
+                        <img src="assets/racao-furao.png" height="200" alt="racaofurao">
 
                         <p>
                             R$ 24.99
                         </p>
-                        <button>Adicionar ao Carrinho</button>
+                        <button onclick="SelecionarProdutos('racaofurao')">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
@@ -201,7 +207,7 @@
                             R$ 34.99
                         </p>
                         
-                        <button>Adicionar ao Carrinho</button>
+                        <button onclick="SelecionarProdutos('locomochila')">Adicionar ao Carrinho</button>
                     </div>
 
                     <div class="produtos-card">
@@ -214,7 +220,7 @@
                         <p>
                             R$ 51.80
                         </p>
-                        <button>Adicionar ao Carrinho</button>
+                        <button onclick="SelecionarProdutos('bebedouro')">Adicionar ao Carrinho</button>
                     </div>
 
                     <div class="produtos-card">
@@ -227,7 +233,7 @@
                         <p>
                             R$ 78.90
                         </p>
-                        <button>Adicionar ao Carrinho</button>
+                        <button onclick="SelecionarProdutos('gaiola')">Adicionar ao Carrinho</button>
                     </div>
                 </div>
             </section>
