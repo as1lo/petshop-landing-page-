@@ -13,68 +13,7 @@
     <link rel="stylesheet" href="style/header.css" />
 
     <title>Pet-Stop</title>
-    <script>
-      function getProduto(){
-        const SelecionarProdutos = localStorage.getItem('produto');
-
-        const produtoimagem = {
-          'racaocachorro': 'assets/racao-cachorro.png',
-          'sachegato': "assets/sache-gato.png",
-          'racaofurao': "assets/racao-furao.png",
-          'locomochila': "assets/locomochila.png",
-          'gaiola': "assets/gaiola-aves.png",
-          'bebedouro': "assets/bebedouro-reptil.png",
-        };
-
-        const produtovalor = {
-          'racaocachorro': 'R$ 39.99',
-          'sachegato': "R$ 9.99",
-          'racaofurao': "R$ 24.99",
-          'locomochila': "R$ 34.99",
-          'gaiola': "R$ 51.80",
-          'bebedouro': "R$ 78.90",
-        };
-
-        const produtonome = {
-          'racaocachorro': 'Ração Cachorro',
-          'sachegato': "Sachê Gato",
-          'racaofurao': "Ração Furão",
-          'locomochila': "Locomochila",
-          'gaiola': "Gaiola de Aves",
-          'bebedouro': "Bebedouro Réptil",
-        };
-
-        document.getElementById('produtoimagem').src = produtoimagem[SelecionarProdutos];
-        
-        document.getElementById('total').textContent = "Total: " + produtovalor[SelecionarProdutos];
-        
-        document.getElementById('valor').textContent = produtovalor[SelecionarProdutos];
-
-        document.getElementById('item-produto-dynamic').textContent = produtonome[SelecionarProdutos];
-      }
-      
-        
-
-      function goback() {
-        window.location.href = "index.html";
-      }
-
-      function somarQuant(btn){
-        if(btn == 1){
-          var contText = document.getElementById('quant').textContent
-          var cont = parseInt(contText)
-          cont++
-          document.getElementById('quant').textContent = cont
-        }else{
-          var contText = document.getElementById('quant').textContent
-          var cont = parseInt(contText)
-          if(cont > 1){
-            cont--
-          }
-          
-          document.getElementById('quant').textContent = cont
-        }
-      }
+    <script src="script/script.js">
     </script>
   </head>
 
@@ -94,7 +33,7 @@
     <main>
       <section id="lista-produtos">
         
-        <table>
+        <table id="tabela">
           <tr>
             <th>
               Produto
@@ -109,22 +48,22 @@
               Deletar
             </th>
           </tr>
-          <tr>
-            <td class="produto">
+          <tr class="tabela_linha">
+            <td class="linha_produto">
               <img id="produtoimagem" src="" height="50" alt="" />
               <p id="item-produto-dynamic"></p>
             </td>
-            <td>
+            <td class="linha_valor">
               <p id="valor"></p>
             </td>
-            <td>
+            <td class="linha_quantidade">
               <div class="cont-quantidade">
                 <button onclick="somarQuant(0)">-1</button>
                 <p id="quant">1</p>
                 <button onclick="somarQuant(1)">+1</button>
               </div>
             </td>
-            <td>
+            <td class="linha_excluir">
               <i class="fa-solid fa-trash"></i>
         
             </td>

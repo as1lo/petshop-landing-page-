@@ -14,12 +14,29 @@
     <link rel="stylesheet" href="style/servicos.css">
     <link rel="stylesheet" href="style/produtos.css">
     <link rel="stylesheet" href="style/contato.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <title>Pet-Stop</title>
+    <script src="script/script.js">
+        
+    </script>
     <script>
-        function SelecionarProdutos(produto){
-            localStorage.setItem('produto', produto);
-            window.location.href = 'checkout.html'
-        }
+        function modalConfirm(produto) {
+            Swal.fire({
+                title: 'Você está certo disso?',
+                text: "Esta pergunta vale um milhão de reais!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sim, tenho certeza!',
+                cancelButtonText: 'Melhor eu parar...'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    SelecionarProdutos(produto);
+                }
+            })
+        };
     </script>
 </head>
 
@@ -167,7 +184,7 @@
                             R$ 39.99
                         </p>
 
-                        <button onclick="SelecionarProdutos('racaocachorro')" >Adicionar ao Carrinho</button>
+                        <button onclick="modalConfirm('racaocachorro')" >Adicionar ao Carrinho</button>
                     </div>
                     <div class="produtos-card">
                         <i class="fa-solid fa-cat"></i>
@@ -179,7 +196,7 @@
                         <p>
                             R$ 9.99
                         </p>
-                        <button onclick="SelecionarProdutos('sachegato')">Adicionar ao Carrinho</button>
+                        <button onclick="modalConfirm('sachegato')">Adicionar ao Carrinho</button>
                     </div>
                     <div class="produtos-card">
                         <i class="fa-solid fa-bone"></i>
@@ -190,7 +207,7 @@
                         <p>
                             R$ 24.99
                         </p>
-                        <button onclick="SelecionarProdutos('racaofurao')">Adicionar ao Carrinho</button>
+                        <button onclick="modalConfirm('racaofurao')">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
@@ -207,7 +224,7 @@
                             R$ 34.99
                         </p>
                         
-                        <button onclick="SelecionarProdutos('locomochila')">Adicionar ao Carrinho</button>
+                        <button onclick="modalConfirm('locomochila')">Adicionar ao Carrinho</button>
                     </div>
 
                     <div class="produtos-card">
@@ -220,7 +237,7 @@
                         <p>
                             R$ 51.80
                         </p>
-                        <button onclick="SelecionarProdutos('bebedouro')">Adicionar ao Carrinho</button>
+                        <button onclick="modalConfirm('bebedouro')">Adicionar ao Carrinho</button>
                     </div>
 
                     <div class="produtos-card">
@@ -233,7 +250,7 @@
                         <p>
                             R$ 78.90
                         </p>
-                        <button onclick="SelecionarProdutos('gaiola')">Adicionar ao Carrinho</button>
+                        <button onclick="modalConfirm('gaiola')">Adicionar ao Carrinho</button>
                     </div>
                 </div>
             </section>
