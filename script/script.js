@@ -18,12 +18,12 @@ function getProduto() {
   };
 
   const produtovalor = {
-    racaocachorro: "R$ 39.99",
-    sachegato: "R$ 9.99",
-    racaofurao: "R$ 24.99",
-    locomochila: "R$ 34.99",
-    gaiola: "R$ 51.80",
-    bebedouro: "R$ 78.90",
+    racaocachorro: 39.99,
+    sachegato: 9.99,
+    racaofurao: 24.99,
+    locomochila: 34.99,
+    gaiola: 51.80,
+    bebedouro: 78.90,
   };
 
   const produtonome = {
@@ -49,7 +49,7 @@ function getProduto() {
     tabela.forEach((item) => {
       if (item.name == productData.name) {
         existInTabela = true;
-        
+
       }
     })
     if (!existInTabela) {
@@ -57,13 +57,13 @@ function getProduto() {
 
       localStorage.setItem("tabela", JSON.stringify(tabela));
     }
-  }else{
+  } else {
     tabela.push(productData);
 
     localStorage.setItem("tabela", JSON.stringify(tabela));
 
   }
-  
+
   //document.getElementById("produtoimagem").src =
   //produtoimagem[SelecionarProdutos];
 
@@ -102,13 +102,23 @@ function displayTabela() {
   if (tabela && tabela.length > 0) {
 
     tabela.forEach((item) => {
+      const totalCompra = document.createElement("p");
       const tabelaLinha = document.createElement("tr");
-
       const cellProduto = document.createElement("td");
       const itemImage = document.createElement("img");
+
+
+      var totalText = document.getElementById("total").textContent || "0";  
+      var total = parseFloat(totalText, 10);  
+     
+        total += item.price;
+        document.getElementById("total").textContent = total.toFixed(2);
+      
+
       itemImage.src = item.image;
       itemImage.alt = item.name;
       itemImage.height = 50;
+
       cellProduto.appendChild(itemImage);
 
       const itemName = document.createElement("p");
@@ -124,27 +134,45 @@ function displayTabela() {
 
       const cellQuantidade = document.createElement("td");
       const itemQuantity = document.createElement("p");
+      const divbtnQuant = document.createElement("div")
+      const btnMais = document.createElement("button")
+      const btnMenos = document.createElement("button")
+
+      btnMenos.onclick = function (){ somarQuant(0) }
+      btnMais.onclick = function (){ somarQuant(1) }
+
+      btnMais.textContent = "+"
+      btnMenos.textContent = "-"
+      itemQuantity.id = "quant"
+      divbtnQuant.className = "cont-quantidade"
+
+
       itemQuantity.textContent = item.quantity;
-      cellQuantidade.appendChild(itemQuantity);
+
+      divbtnQuant.appendChild(btnMenos)
+      divbtnQuant.appendChild(itemQuantity)
+      divbtnQuant.appendChild(btnMais)
+
+      cellQuantidade.appendChild(divbtnQuant);
 
 
       const cellDelete = document.createElement("td");
       const deleteButton = document.createElement("button");
       deleteButton.textContent = "Remover";
-      deleteButton.onclick = () => removeItem(item.name); 
+      deleteButton.onclick = () => removeItem(item.name);
       cellDelete.appendChild(deleteButton);
 
-      
+
       tabelaLinha.appendChild(cellProduto);
       tabelaLinha.appendChild(cellValor);
       tabelaLinha.appendChild(cellQuantidade);
       tabelaLinha.appendChild(cellDelete);
 
-    
+
       tabelaList.appendChild(tabelaLinha);
     });
   } else {
-    
+
     tabelaList.innerHTML = "<p>Carrinho vazio</p>";
   }
 }
