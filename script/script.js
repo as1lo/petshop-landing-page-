@@ -43,11 +43,27 @@ function getProduto() {
   };
 
   let tabela = JSON.parse(localStorage.getItem("tabela")) || [];
+  var existInTabela = false;
 
-  tabela.push(productData);
+  if (tabela && tabela.length > 0) {
+    tabela.forEach((item) => {
+      if (item.name == productData.name) {
+        existInTabela = true;
+        
+      }
+    })
+    if (!existInTabela) {
+      tabela.push(productData);
 
-  localStorage.setItem("tabela", JSON.stringify(tabela));
+      localStorage.setItem("tabela", JSON.stringify(tabela));
+    }
+  }else{
+    tabela.push(productData);
 
+    localStorage.setItem("tabela", JSON.stringify(tabela));
+
+  }
+  
   //document.getElementById("produtoimagem").src =
   //produtoimagem[SelecionarProdutos];
 

@@ -23,14 +23,14 @@
     <script>
         function modalConfirm(produto) {
             Swal.fire({
-                title: 'Você está certo disso?',
-                text: "Esta pergunta vale um milhão de reais!",
+                title: 'Adicionar ao Carrinho?',
+                text: "O item será adicionado",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Sim, tenho certeza!',
-                cancelButtonText: 'Melhor eu parar...'
+                confirmButtonText: 'Adicionar',
+                cancelButtonText: 'Cancelar'
             }).then((result) => {
                 if (result.isConfirmed) {
                     SelecionarProdutos(produto);
