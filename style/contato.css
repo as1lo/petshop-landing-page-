@@ -88,7 +88,7 @@ button:active {
     }
 
     #dog-form{
-        width: 200%;
+        width: 80vw;
     }
 
         
@@ -96,6 +96,6 @@ button:active {
         background-color: #FBBD08;
         padding-left: 10%;
         padding-right: 10%;
-        width: 50vw;
+       
     }
 }

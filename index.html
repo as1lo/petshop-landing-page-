@@ -14,13 +14,16 @@
     <link rel="stylesheet" href="style/servicos.css">
     <link rel="stylesheet" href="style/produtos.css">
     <link rel="stylesheet" href="style/contato.css">
+    <link rel="stylesheet" href="style/carousel.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <title>Pet-Stop</title>
     <script src="script/script.js">
-        
+
     </script>
+
     <script>
+
         function modalConfirm(produto) {
             Swal.fire({
                 title: 'Adicionar ao Carrinho?',
@@ -52,17 +55,56 @@
                 <li><a href="#contato">Contato</a></li>
                 <li><a href="checkout.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
-            
+
         </nav>
     </header>
 
     <body>
         <main>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img id="imagem" src="assets/nikyu.png" alt="Imagem" width="300">
+                </div>
+            </div>
+            <button id="btn1">&#10094;</button>
+            <button id="btn2">&#10095;</button>
+        
+            <script>
+                
+                document.addEventListener('DOMContentLoaded', function () {
+                    document.getElementById('btn2').addEventListener('click', function () {
+                        const img = document.getElementById('imagem');
+                        
+                      
+                        if (img.src.includes('nikyu.png')) {
+                            img.src = 'assets/nikyu-passaro.png'; 
+                        } else if (img.src.includes('nikyu-cachorro.png')) {
+                            img.src = 'assets/nikyu.png'; 
+                        } else {
+                            img.src = 'assets/nikyu-cachorro.png'; 
+                        }
+                    });
+
+                    document.getElementById('btn1').addEventListener('click', function () {
+                        const img = document.getElementById('imagem');
+                        
+                        
+                        if (img.src.includes('nikyu.png')) {
+                            img.src = 'assets/nikyu-cachorro.png'; 
+                        } else if (img.src.includes('nikyu-cachorro.png')) {
+                            img.src = 'assets/nikyu-passaro.png'; 
+                        } else {
+                            img.src = 'assets/nikyu.png'; 
+                        }
+                    });
+                });
+            </script>
             <section id="principal">
                 <h3 id="titulo-principal">Pet-Stop<br><span id="span-titulo-principal">A parada perfeita</span><br>para
                     o seu Pet</h3>
-                <img id="dog-principal" src="assets/dog-principal-png.png"  alt="">
+                <img id="dog-principal" src="assets/dog-principal-png.png" alt="">
             </section>
+
 
 
             <section id="sobre">
@@ -78,15 +120,15 @@
                     <p>
                         Seja filhote ou adulto, contemplamos animais de pelo curto e longo, aves, répteis,
                         roedores, peixes e até mesmo animais exóticos.
-                     
+
                     </p>
-                    
+
                     <p>
                         Oferecendo serviços desde banho e tosa à
                         hospedagem e adestramento, contribuindo com produtos de qualidade para o seu pet!
                     </p>
                 </div>
-                
+
             </section>
 
 
@@ -184,7 +226,7 @@
                             R$ 39.99
                         </p>
 
-                        <button onclick="modalConfirm('racaocachorro')" >Adicionar ao Carrinho</button>
+                        <button onclick="modalConfirm('racaocachorro')">Adicionar ao Carrinho</button>
                     </div>
                     <div class="produtos-card">
                         <i class="fa-solid fa-cat"></i>
@@ -223,7 +265,7 @@
                         <p>
                             R$ 34.99
                         </p>
-                        
+
                         <button onclick="modalConfirm('locomochila')">Adicionar ao Carrinho</button>
                     </div>
 
@@ -262,17 +304,17 @@
                     <img src="assets/dog-form.png" id="dog-form" alt="">
                 </div>
                 <div id="contato-form">
-                    <form action="" >
+                    <form action="">
                         <label for="">Entre em Contato</label>
                         <br>
                         <div id="container-label-input">
-                            
+
                             <br>
                             <input type="email" placeholder="E-Mail">
                             <button>Enviar</button>
                         </div>
-                        
-                        
+
+
                     </form>
 
                     <img src="assets/volta-contato.png" alt="">

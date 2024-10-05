@@ -206,3 +206,4 @@ function somarQuant(btn) {
     document.getElementById("quant").textContent = cont;
   }
 }
+
