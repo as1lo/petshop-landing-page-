@@ -22,8 +22,8 @@ function getProduto() {
     sachegato: 9.99,
     racaofurao: 24.99,
     locomochila: 34.99,
-    gaiola: 51.80,
-    bebedouro: 78.90,
+    gaiola: 78.90,
+    bebedouro:  51.80,
   };
 
   const produtonome = {
@@ -64,17 +64,6 @@ function getProduto() {
 
   }
 
-  //document.getElementById("produtoimagem").src =
-  //produtoimagem[SelecionarProdutos];
-
-  //document.getElementById("total").textContent =
-  //"Total: " + produtovalor[SelecionarProdutos];
-
-  //document.getElementById("valor").textContent =
-  //produtovalor[SelecionarProdutos];
-
-  //document.getElementById("item-produto-dynamic").textContent =
-  //produtonome[SelecionarProdutos];
   displayTabela();
 }
 
@@ -107,13 +96,13 @@ function displayTabela() {
       const cellProduto = document.createElement("td");
       const itemImage = document.createElement("img");
 
+      let total = 0;
 
-      var totalText = document.getElementById("total").textContent || "0";  
-      var total = parseFloat(totalText, 10);  
-     
-        total += item.price;
-        document.getElementById("total").textContent = total.toFixed(2);
-      
+      tabela.forEach((item) => {
+        total += item.price * item.quantity;
+      });
+
+      document.getElementById("total").textContent = total.toFixed(2);
 
       itemImage.src = item.image;
       itemImage.alt = item.name;
@@ -138,8 +127,8 @@ function displayTabela() {
       const btnMais = document.createElement("button")
       const btnMenos = document.createElement("button")
 
-      btnMenos.onclick = function (){ somarQuant(0) }
-      btnMais.onclick = function (){ somarQuant(1) }
+      btnMenos.onclick = function () { somarQuant(0, item.name) }
+      btnMais.onclick = function () { somarQuant(1, item.name) }
 
       btnMais.textContent = "+"
       btnMenos.textContent = "-"
@@ -190,20 +179,30 @@ function goback() {
 }
 
 //SOMAR QUANT DO PRODUTO
-function somarQuant(btn) {
-  if (btn == 1) {
-    var contText = document.getElementById("quant").textContent;
-    var cont = parseInt(contText);
-    cont++;
-    document.getElementById("quant").textContent = cont;
-  } else {
-    var contText = document.getElementById("quant").textContent;
-    var cont = parseInt(contText);
-    if (cont > 1) {
-      cont--;
+function somarQuant(btn, productName) {
+
+  let tabela = JSON.parse(localStorage.getItem("tabela")) || [];
+
+
+  const product = tabela.find((item) => item.name === productName);
+
+  if (product) {
+
+    if (btn == 1) {
+      product.quantity++;
     }
 
-    document.getElementById("quant").textContent = cont;
+    else {
+      if (product.quantity > 1) {
+        product.quantity--;
+      }
+    }
+
+
+    localStorage.setItem("tabela", JSON.stringify(tabela));
+
+
+    displayTabela();
   }
 }
 

@@ -64,31 +64,60 @@
         <main>
             <script>
                 document.querySelector('#mode-tema').addEventListener('click', () => {
-                  const body = document.querySelector('body');
-                  const button = document.querySelector('#mode-tema');
-                  
-                  body.classList.toggle('dark-mode');
-                  
-                  if (body.classList.contains('dark-mode')) {
-                    button.textContent = 'Para o Light Mode';
-                  } else {
-                    button.textContent = 'Para o Dark Mode';
-                  }
+                    const body = document.querySelector('body');
+                    const button = document.querySelector('#mode-tema');
+
+                    body.classList.toggle('dark-mode');
+
+                    if (body.classList.contains('dark-mode')) {
+                        button.textContent = 'Para o Light Mode';
+                    } else {
+                        button.textContent = 'Para o Dark Mode';
+                    }
                 });
-              </script>
-              <style>
+            </script>
+            <script>
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    document.getElementById('btn2').addEventListener('click', function () {
+                        const img = document.getElementById('imagem');
+
+
+                        if (img.src.includes('nikyu.png')) {
+                            img.src = 'assets/nikyu-passaro.png';
+                        } else if (img.src.includes('nikyu-cachorro.png')) {
+                            img.src = 'assets/nikyu.png';
+                        } else {
+                            img.src = 'assets/nikyu-cachorro.png';
+                        }
+                    });
+
+                    document.getElementById('btn1').addEventListener('click', function () {
+                        const img = document.getElementById('imagem');
+
+                        if (img.src.includes('nikyu.png')) {
+                            img.src = 'assets/nikyu-cachorro.png';
+                        } else if (img.src.includes('nikyu-cachorro.png')) {
+                            img.src = 'assets/nikyu-passaro.png';
+                        } else {
+                            img.src = 'assets/nikyu.png';
+                        }
+                    });
+                });
+            </script>
+            <style>
                 body.dark-mode {
                     background-color: #121212;
                     color: #f0f0f0;
-                  }
-              
-                  button.dark-mode {
+                }
+
+                button.dark-mode {
                     background-color: #555;
                     color: #f0f0f0;
-                  }
-                </style>
-              
-            
+                }
+            </style>
+
+
             <div class="carousel-container">
                 <div class="carousel-slide">
                     <img id="imagem" src="assets/nikyu.png" alt="Imagem" width="300">
@@ -96,37 +125,8 @@
             </div>
             <button id="btn1">&#10094;</button>
             <button id="btn2">&#10095;</button>
-        
-            <script>
-                
-                document.addEventListener('DOMContentLoaded', function () {
-                    document.getElementById('btn2').addEventListener('click', function () {
-                        const img = document.getElementById('imagem');
-                        
-                      
-                        if (img.src.includes('nikyu.png')) {
-                            img.src = 'assets/nikyu-passaro.png'; 
-                        } else if (img.src.includes('nikyu-cachorro.png')) {
-                            img.src = 'assets/nikyu.png'; 
-                        } else {
-                            img.src = 'assets/nikyu-cachorro.png'; 
-                        }
-                    });
 
-                    document.getElementById('btn1').addEventListener('click', function () {
-                        const img = document.getElementById('imagem');
-                        
-                        
-                        if (img.src.includes('nikyu.png')) {
-                            img.src = 'assets/nikyu-cachorro.png'; 
-                        } else if (img.src.includes('nikyu-cachorro.png')) {
-                            img.src = 'assets/nikyu-passaro.png'; 
-                        } else {
-                            img.src = 'assets/nikyu.png'; 
-                        }
-                    });
-                });
-            </script>
+
             <section id="principal">
                 <h3 id="titulo-principal">Pet-Stop<br><span id="span-titulo-principal">A parada perfeita</span><br>para
                     o seu Pet</h3>
